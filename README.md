@@ -1,4 +1,6 @@
 data_converter
 ==============
 
-Takes CSV or KML data and converts it into web standard formats, including JSON, HTML Table, XML, KML and geoJSON
+Takes CSV or KML data and converts it into web standard formats, including JSON, HTML Table, XML, KML and geoJSON. 
+
+Demo: http://robkandel.github.io/data_converter/
