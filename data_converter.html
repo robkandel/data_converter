@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Data Converter</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,700,400' rel='stylesheet' type='text/css'>
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/data_converter.css" type="text/css" >
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!--[if lt IE 9]> 
+	<script>
+		var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+			"figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+		    "progress,section,time,video").split(',');
+		for (var i = 0; i < e.length; i++) {
+			document.createElement(e[i]);
+		}
+	</script>
+	<script type="text/javascript" src="/static/js/respond.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/kml_geojson.min.js"></script>
+<script type="text/javascript" src="js/csv_json_converter.min.js"></script>
+<script type="text/javascript" src="js/data_converter.min.0.0.1.js"></script>
+</head>
+<body>
+	<header class="headerWrapper transitionAll">
+		<hgroup class="headerInnerWrapper transitionAll">
+			<div class="headerLogo transitionAll">
+				<div class="headerTitle transitionAll">Data Converter</div>
+				<div class="headerSubhead">Convert your CSV file into a JSON or XML web standard format</div>
+				<div class="clearAll"></div>
+			</div>
+			<div class="socialWrapper transitionAll">
+				<li class="transitionAll socialButton"><a href="#"><i class="fa fa-facebook-square fa-2"></i></a></li>
+				<li class="transitionAll socialButton"><a href="#"><i class="fa fa-twitter fa-2"></i></a></li>
+				<li class="transitionAll socialButton"><a href="#"><i class="fa fa-github fa-2"></i></a></li>
+				<div class="clearAll"></div>
+			</div>
+			<div class="clearAll"></div>
+		</hgroup>
+	</header>
+	<section class="container containerSection">
+		<div class="containerInnerWrapper">
+			<div class="optionWrapper">
+				<li class="buttonItem transitionAll optionButton optionDropdown" data-role="option_dropdown">Output Options<span class="optionDropdownArrow"><i class="fa fa-bars"></i></span></li>
+				<ul class="outputWrapper transitionAll" data-role="output_wrapper">
+					<li class="buttonItem transitionAll optionButton optionButtonActive" data-role="option_0" data-property="object">JSON (Objects)</li>
+					<li class="buttonItem transitionAll optionButton" data-role="option_1" data-property="array">JSON (Arrays)</li>
+					<li class="buttonItem transitionAll optionButton" data-role="option_2" data-property="table">HTML Table</li>
+					<li class="buttonItem transitionAll optionButton" data-role="option_3" data-property="xml">XML</li>
+					<li class="buttonItem transitionAll optionButton optionButtonNotActive" data-role="option_4" data-property="kml">KML</li>
+					<li class="buttonItem transitionAll optionButton optionButtonLast optionButtonNotActive" data-role="option_5" data-property="geojson">geoJSON</li>
+					<div class="clearAll"></div>
+				</ul>
+				<div class="clearAll"></div>
+			</div>
+			<div class="containerSplit" data-role="container_split">
+				<div class="containerSplit_50 transitionAll">
+					<div class="contentDataArea contentDataAreaDrag transitionAll" id="content_data_drag" data-role="data_drag">
+						<div class="dataLabel">Input Data <span>Paste your data or drag your CSV/KML file here</span></div>
+        	        	<textarea class="contentDragable contentDragableDefault buttonItem" id="content_input_data"></textarea>
+	        		</div>
+	        	</div>
+	        	<div class="containerSplit_50 transitionAll">
+		        	<div class="contentDataArea contentDataOutput transitionAll contentHidden" id="content_data_output" data-role="data_output">
+    	    			<div class="dataLabel">Output</div>
+        	        	<textarea class="contentDragable contentDragableDefault" id="content_output_data" contenteditable="true" readonly></textarea>
+	            	    <div class="tableConverter" id="table_converter" style="display:none !importat; visibility: hidden !important;"></div>
+	            	</div>
+	            </div>
+	            <div class="clearAll"></div>
+        	</div>
+		</div>
+	</section>
+	<footer class="footerWrapper">
+		<div class="footerInner">
+			Created by <a href="http://www.robkandelphoto.com" target="_blank">Rob Kandel</a>
+		</div>
+	</footer>
+	<script type="text/javascript">
+		convert_data.init();
+	</script>
+</body>
+</html>
